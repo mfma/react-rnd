@@ -1,18 +1,23 @@
 {
-  "name": "react-rnd",
+  "name": "react-rnd-mfma",
+  "author": "mfma",
   "license": "MIT",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "NODE_ENV=production babel -d lib/ src/components/ --copy-files",
-    "build:example": "NODE_ENV=example webpack",
+    "build": "cross-env NODE_ENV=production babel -d lib/ src/components/ --copy-files",
+    "build:example": "cross-env NODE_ENV=example webpack",
     "flow": "flow",
     "lint": "eslint src",
-    "test": "NODE_ENV=test ava",
+    "test": "cross-env NODE_ENV=test ava",
     "guide:server": "styleguidist server",
     "guide:build": "styleguidist build",
     "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mfma/react-rnd.git"
   },
   "keywords": [
     "react",
@@ -21,6 +26,10 @@
     "component",
     "draggable"
   ],
+  "bugs": {
+    "url": "https://github.com/mfma/react-rnd/issues"
+  },
+  "homepage": "https://github.com/mfma/react-rnd/",
   "devDependencies": {
     "ava": "^0.19.1",
     "babel-cli": "^6.24.1",
@@ -38,6 +47,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "browser-env": "^2.0.30",
+    "cross-env": "^4.0.0",
     "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
